@@ -1,0 +1,131 @@
+GET http://localhost:3000/readers/
+
+###
+
+POST https://ancient-beach-08769.herokuapp.com/readers/login
+Content-Type: application/json
+
+{  
+    "Username": "1753023@student.hcmus.edu.vn",
+    "Password": "Testpassword"
+}
+
+###
+
+POST http://localhost:3000/readers/login
+Content-Type: application/json
+
+{  
+    "Username": "1753023@student.hcmus.edu.vn",
+    "Password": "Testpassword"
+}
+###
+
+GET http://localhost:3000/readers/13
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6MTMsInVzZXJuYW1lIjoiMTc1MzAyM0BzdHVkZW50LmhjbXVzLmVkdS52biJ9LCJpYXQiOjE2MTA1NTAwNzQsImV4cCI6MTYxMDU1MzY3NH0.G6LayGufdT7y5Tqe0UmfFzMNvW1AcYgDRt9gYRcd0Zo
+
+###
+
+POST  http://localhost:3000/readers/refresh-token
+Content-Type: application/json
+
+{
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6MTMsInVzZXJuYW1lIjoiMTc1MzAyM0BzdHVkZW50LmhjbXVzLmVkdS52biJ9LCJpYXQiOjE2MTA4NzkwNTMsImV4cCI6MTkyNjIzOTA1M30.H91N1AeWIWFu6w9J8w-TobfTQPjH-7iiK9vFytxS0ro"
+}
+
+###
+
+POST  https://ancient-beach-08769.herokuapp.com/readers/readers/refresh-token
+Content-Type: application/json
+
+{
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6MTMsInVzZXJuYW1lIjoiMTc1MzAyM0BzdHVkZW50LmhjbXVzLmVkdS52biJ9LCJpYXQiOjE2MTA4Nzg0MDEsImV4cCI6MTkyNjIzODQwMX0.vqiyAbUMU567iWYVkDrTLsS9LF4rWmysjEmOL3EWyDk"
+}
+###
+PUT http://localhost:3000/readers/10
+Content-Type: application/json
+
+{
+      "Password": "Testpassword",
+      "Status": "Disable",
+      "Note": "Nothing",
+      "ProfileImg": "https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/131294218_4220110181335986_7140461812444362762_o.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=2mS5AM4ckcoAX9SIjtG&_nc_ht=scontent.fsgn5-5.fna&oh=05407451c5b623e12af2c8d629b18551&oe=5FFE5B90" 
+}
+
+###
+
+DELETE  http://localhost:3000/readers/10
+
+###
+POST  http://localhost:3000/readers/register
+Content-Type: application/json
+
+{
+      "UniID": "967998",
+      "Password": "Testpassword",    
+      "Type": "Lecturer",
+      "email": "12345169@student.hcmus.edu.vn",
+      "fullname": "VoQPhu",
+      "phonenumber": "39084099"
+      "ProfileImg": "https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/131294218_4220110181335986_7140461812444362762_o.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=2mS5AM4ckcoAX9SIjtG&_nc_ht=scontent.fsgn5-5.fna&oh=05407451c5b623e12af2c8d629b18551&oe=5FFE5B90" 
+}
+###
+GET   http://localhost:3000/books
+
+###
+GET   http://localhost:3000/readers/12/borrowedBooks
+
+###
+
+POST  http://localhost:3000/readers/12/borrowBook/12
+Content-Type: application/json
+
+{
+      "StartTime": "1/1/2020",
+      "EndTime": "2/1/2020",
+      "ExtendedDate": "2/1/2020"
+}
+
+
+###
+
+Put  http://localhost:3000/readers/updateBorrowedBook/1
+Content-Type: application/json
+
+{
+      "StartTime": "1/1/2020",
+      "EndTime": "3/1/2020",
+      "ExtendedDate": "2/1/2020"
+}
+
+
+###
+
+POST  http://localhost:3000/readers/12/suggestBuying
+Content-Type: application/json
+
+{
+    "BookISBN": "23454353",
+    "Reason": "Tôi muốn mua lắm",
+    "BookMajor": "AI"
+}
+
+###
+GET   http://localhost:3000/books/suggestedBuying
+
+###
+GET http://localhost:3000/tags
+###
+GET http://localhost:3000/books
+
+###
+GET http://localhost:3000/books/12/tags
+
+###
+
+POST  http://localhost:3000/books/10/addTag/7
+Content-Type: application/json
+
+{
+
+}
